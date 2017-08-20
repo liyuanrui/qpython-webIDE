@@ -78,19 +78,19 @@ class MyLayout(BoxLayout):
     def write(self):
         status=self.ids.status.text
         dutton=self.ids.action.text
-        if status=='状态: 未启用webIDE':
+        if 'not' in status:
             hostname=self.ids.hostname.text
             password=self.ids.password.text
             shellcommand=self.ids.shellcommand.text
             runcommand=self.ids.runcommand.text
             writesettings(hostname,password,shellcommand,runcommand)
             writesh(True)
-            self.ids.status.text='状态: 已启用webIDE'
-            self.ids.action.text='停用webIDE'
+            self.ids.status.text='Status: webIDE is running'
+            self.ids.action.text='Stop webIDE'
         else:
             writesh(False)
-            self.ids.status.text='状态: 未启用webIDE'
-            self.ids.action.text='启用webIDE'
+            self.ids.status.text='Status: webIDE is not run'
+            self.ids.action.text='Start webIDE'
 
 
 class MainApp(App):
@@ -104,11 +104,11 @@ class MainApp(App):
         self.root.ids.shellcommand.text=shellcommand
         self.root.ids.runcommand.text=runcommand
         if status:
-            self.root.ids.status.text='状态: 已启用webIDE'
-            self.root.ids.action.text='停用webIDE'
+            self.root.ids.status.text='Status: webIDE is running'
+            self.root.ids.action.text='Stop webIDE'
         else:
-            self.root.ids.status.text='状态: 未启用webIDE'
-            self.root.ids.action.text='启用webIDE'
+            self.root.ids.status.text='Status: webIDE is not run'
+            self.root.ids.action.text='Start webIDE'
         
 
 if __name__=='__main__':

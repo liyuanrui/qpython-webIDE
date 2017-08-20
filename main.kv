@@ -15,7 +15,6 @@
             source:'55.png'
     Label:
         id:status
-        text:'状态:'
         size_hint_y:None
         height:'48dp'
         text_size:(self.width,None)
@@ -25,7 +24,7 @@
         size_hint_y:None
         height:'3dp'
     Label:
-        text:'远程主机信息(用户名@主机地址:ssh端口)'
+        text:'hostname(user@ip:port)'
         size_hint_y:None
         height:'48dp'
         text_size:(self.width,None)
@@ -42,7 +41,7 @@
         size_hint_y:None
         height:'3dp'
     Label:
-        text:'远程主机ssh密码'
+        text:'password'
         size_hint_y:None
         height:'48dp'
         text_size:(self.width,None)
@@ -58,7 +57,7 @@
         size_hint_y:None
         height:'3dp'
     Label:
-        text:'终端命令'
+        text:'shell command'
         size_hint_y:None
         height:'48dp'
         text_size:(self.width,None)
@@ -75,7 +74,7 @@
         size_hint_y:None
         height:'3dp'
     Label:
-        text:'运行程序命令'
+        text:'run program command'
         size_hint_y:None
         height:'48dp'
         text_size:(self.width,None)
@@ -93,7 +92,6 @@
         height:'36dp'
     Dutton:
         id:action
-        text:'启用webIDE'
         size_hint_y:None
         height:'81dp'
         background_normal:'3.png'
